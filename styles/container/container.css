@@ -1,0 +1,9 @@
+
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+
+    padding: 7.7rem 19.5rem 0 19.5rem;
+}

@@ -5,7 +5,10 @@
 
     --clr-principal: #EC362D;
     --clr-ft-titulo: #FFF;
-    --clr-criar-quizz: #B9B9B9;
+    --clr-ft-criarquizz: #B9B9B9;
+
+    --clr-border-criarquizz: #D4D4D4;
+    --clr-bg-btn-criarquizz: #FAFAFA;
 }
 
 *{

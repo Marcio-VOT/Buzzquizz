@@ -1,0 +1,21 @@
+
+.container__criar-quizz{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+
+    background-color: var(--clr-bg-btn-criarquizz);
+    border: .1rem dashed var(--clr-border-criarquizz);
+    border-radius: .5rem;
+
+    height: 18rem;
+    width: 100%;
+}
+
+.container__criar-quizz p{
+    font-size: 2rem;
+    font-weight: 400;
+    color: var(--clr-ft-criarquizz);
+    text-align: center;
+}

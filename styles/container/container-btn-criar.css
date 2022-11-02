@@ -1,0 +1,22 @@
+
+.container__btn-criar{
+    font-size: 2rem;
+    font-weight: 400;
+    color: var(--clr-principal);
+
+    background-color: var(--clr-bg-btn-criarquizz);
+    border: .1rem dashed var(--clr-principal);
+    border-radius: 5rem;
+
+    height: 4rem;
+    width: 15rem;
+
+    cursor: pointer;
+    transition: .5s;
+}
+
+.container__btn-criar:hover{
+    background-color: var(--clr-principal);
+    border-color: var(--clr-bg-btn-criarquizz);
+    color: var(--clr-bg-btn-criarquizz);
+}
