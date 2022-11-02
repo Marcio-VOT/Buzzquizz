@@ -8,9 +8,10 @@
     background-color: var(--clr-bg-btn-criarquizz);
     border: .1rem dashed var(--clr-border-criarquizz);
     border-radius: .5rem;
+    margin-bottom: 2.7rem;
 
     height: 18rem;
-    width: 100%;
+    width: 105rem;
 }
 
 .container__criar-quizz p{
