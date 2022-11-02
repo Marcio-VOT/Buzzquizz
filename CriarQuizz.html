@@ -12,6 +12,7 @@
 
     <link rel="stylesheet" href="./styles/container/container.css"/>
     <link rel="stylesheet" href="./styles/container/container-proximo.css"/>
+    <link rel="stylesheet" href="./styles/container/container-voltar.css"/>
     
     <link rel="stylesheet" href="./styles/quizzes/quizz.css"/>
 
@@ -129,7 +130,7 @@
             </div>
         </section>
 
-        <section class="criar-quizz__niveis">
+        <section class="criar-quizz__niveis esconder">
             <h2 class="subtitulo">Agora, decida os níveis</h2>
 
             <div class="criar-quizz__niveis__info">
@@ -168,7 +169,16 @@
             </div>
         </section>
 
+        <section class="criar-quiz__fim">
+            <h2 class="subtitulo-final">Seu quizz está pronto!</h2>
+            <div class="quizz-final">
+                <!--img src="https://i.pinimg.com/564x/0a/93/13/0a931365bef1418e9a779e5055676f98.jpg" alt="gato"/-->
+                <span>Acerte os personagens corretos dos Simpsons e prove seu amor!</span>
+            </div>
+        </section>
+
         <button class="container__proximo" onclick="testaCriar()">Prosseguir pra criar perguntas</button>
+        <button class="container__voltar" onclick="">Voltar pra home</button>
     </main>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="CriarQuizz.js"></script>
