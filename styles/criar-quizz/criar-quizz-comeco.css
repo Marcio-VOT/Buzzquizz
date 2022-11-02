@@ -1,11 +1,7 @@
 
-.container{
+.criar-quizz__comeco{
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-
-    background-color: #FFF;
-
-    padding: 7.7rem 0;
 }

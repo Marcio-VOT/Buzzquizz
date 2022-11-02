@@ -1,0 +1,20 @@
+
+.criar-quizz__input{
+    font-size: 1.9rem;
+
+    border: .1rem solid var(--clr-border-input);
+    border-radius: .5rem;
+    
+    padding-left: 2rem;
+    margin-bottom: .9rem;
+    
+    height: 4.5rem;
+}
+
+.criar-quizz__input::placeholder{
+    font-style: italic;
+}
+
+.criar-quizz__input:focus{
+    outline: none;
+}

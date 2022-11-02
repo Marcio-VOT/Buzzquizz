@@ -11,8 +11,13 @@
     <link rel="stylesheet" href="./styles/cabecalho/cabecalho.css"/>
 
     <link rel="stylesheet" href="./styles/container/container.css"/>
+    <link rel="stylesheet" href="./styles/container/container-proximo.css"/>
     
     <link rel="stylesheet" href="./styles/quizzes/quizz.css"/>
+
+    <link rel="stylesheet" href="./styles/criar-quizz/criar-quizz-comeco.css"/>
+    <link rel="stylesheet" href="./styles/criar-quizz/criar-quizz-comeco-info.css"/>
+    <link rel="stylesheet" href="./styles/criar-quizz/criar-quizz-input.css"/>
 
     <title>BuzzQuizz</title>
 </head>
@@ -22,7 +27,18 @@
     </header>
 
     <main class="container">
-        
+        <section class="criar-quizz__comeco">
+            <h2 class="subtitulo">Comece pelo começo</h2>
+
+            <div class="criar-quizz__comeco__info">
+                <input class="criar-quizz__input" type="text" placeholder="Título do seu quizz"/>
+                <input class="criar-quizz__input" type="url" placeholder="URL da imagem do seu quizz"/>
+                <input class="criar-quizz__input" type="number" placeholder="Quantidade de perguntas do quizz"/>
+                <input class="criar-quizz__input" type="number" placeholder="Quantidade de níveis do quizz"/>
+            </div>
+        </section>
+
+        <button class="container__proximo">Prosseguir pra criar perguntas</button>
     </main>
 </body>
 </html>
