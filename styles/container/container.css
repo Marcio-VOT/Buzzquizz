@@ -5,7 +5,7 @@
     justify-content: flex-start;
     align-items: center;
 
-    background-color: #FFF;
+    background-color: var(--clr-bg-btn-criarquizz);
 
     padding: 7.7rem 0;
 }
