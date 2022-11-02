@@ -19,3 +19,7 @@ html{
     font-family: var(--ft-principal);
     font-size: 10px;
 }
+
+.esconder{
+    display: none;
+}
