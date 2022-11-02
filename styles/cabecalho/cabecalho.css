@@ -1,0 +1,21 @@
+
+.cabecalho{
+    position: sticky;
+    top: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: var(--clr-principal);
+
+    height: 6.9rem;
+    width: 100%;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.cabecalho h1{
+    font-size: 3.7rem;
+    font-weight: 700;
+    color: var(--clr-ft-titulo);
+}
