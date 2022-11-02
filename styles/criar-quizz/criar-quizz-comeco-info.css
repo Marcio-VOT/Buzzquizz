@@ -19,6 +19,10 @@
     margin-bottom: 1rem;
 }
 
+.criar-quizz__perguntas__info:not(.contraido) div:nth-child(1) img{
+    display: none;
+}
+
 .criar-quizz__perguntas__info span{
     font-size: 2rem;
     font-weight: 700;
@@ -37,4 +41,16 @@
 
 div.contraido{
     height: 6rem;
+}
+
+div.contraido div:nth-child(1){
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    width: 100%;
+}
+
+div.contraido img{
+    width: 2rem;
 }
