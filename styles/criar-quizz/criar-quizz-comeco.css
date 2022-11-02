@@ -1,5 +1,5 @@
 
-.criar-quizz__comeco{
+.criar-quizz__comeco, .criar-quizz__perguntas{
     display: flex;
     flex-direction: column;
     justify-content: flex-start;

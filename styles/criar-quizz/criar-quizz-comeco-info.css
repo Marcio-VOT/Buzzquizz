@@ -1,5 +1,5 @@
 
-.criar-quizz__comeco__info{
+.criar-quizz__comeco__info, .criar-quizz__perguntas__info{
     display: flex;
     flex-direction: column;
 
@@ -8,6 +8,33 @@
     margin-top: 2rem;
     margin-bottom: 8rem;
 
+    overflow: hidden;
+
     width: 60rem;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.05);
+    transition: height 1s;
+}
+
+.criar-quizz__perguntas__info:not(:last-child){
+    margin-bottom: 1rem;
+}
+
+.criar-quizz__perguntas__info span{
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+}
+
+
+.criar-quizz__perguntas__info > span:nth-child(n+2){
+    padding: 2rem 0;
+}
+
+.criar-quizz__perguntas__info > div:not(:last-child){
+    width: 100%;
+    margin-bottom: 2rem;
+}
+
+div.contraido{
+    height: 6rem;
 }

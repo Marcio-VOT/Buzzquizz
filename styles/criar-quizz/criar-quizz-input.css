@@ -9,6 +9,7 @@
     margin-bottom: .9rem;
     
     height: 4.5rem;
+    width: 100%;
 }
 
 .criar-quizz__input::placeholder{
