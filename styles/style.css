@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+
+:root{
+    --ft-principal: 'Roboto', sans-serif;
+
+    --clr-principal: #EC362D;
+    --clr-ft-titulo: #FFF;
+    --clr-criar-quizz: #B9B9B9;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+html{
+    font-family: var(--ft-principal);
+    font-size: 10px;
+}
