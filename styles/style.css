@@ -30,6 +30,6 @@ html{
     margin-bottom: 4rem;
 }
 
-section.esconder{
+section.esconder, div.esconder{
     display: none;
 }

@@ -1,0 +1,14 @@
+
+.quizzes__btn-criar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: var(--clr-principal);
+    border: none;
+    border-radius: 100%;
+
+    height: 3rem;
+    width: 3rem;
+    cursor: pointer;
+}

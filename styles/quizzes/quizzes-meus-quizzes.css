@@ -1,0 +1,10 @@
+
+.quizzes__meus-quizzes > div:nth-child(1){
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.quizzes__meus-quizzes > div:nth-child(1) > h2{
+    padding-right: 2.6rem;
+}
