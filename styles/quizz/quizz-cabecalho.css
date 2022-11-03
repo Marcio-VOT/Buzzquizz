@@ -1,0 +1,43 @@
+
+.quizz-cabecalho{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+    background-position: center;
+    background-size: cover;
+    overflow: hidden;
+
+    height: 22rem;
+    width: 100%;
+
+}
+
+.quizz-cabecalho img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.quizz-cabecalho h2{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 3.9rem;
+    font-weight: 400;
+    color: var(--clr-ft-titulo);
+
+    background-color: rgba(0, 0, 0, .6);
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    height: 100%;
+    width: 100%;
+
+    transition: 1s;
+}
