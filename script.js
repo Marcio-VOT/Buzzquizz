@@ -5,7 +5,6 @@ promisse.catch(function (){alert("erro")});
 
 
 function adicionaQuizz(resultadoAPI){
-    alert("");
     const array = resultadoAPI.data;
     const quizzLista = document.querySelector(".quizzes__lista");
     quizzLista.innerHTML = "";

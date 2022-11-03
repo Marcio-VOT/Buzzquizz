@@ -27,7 +27,7 @@
     </header>
 
     <main class="container">
-        <section class="criar-quizz__comeco esconder">
+        <section class="criar-quizz__comeco ">
             <h2 class="subtitulo">Comece pelo começo</h2>
 
             <div class="criar-quizz__comeco__info">
@@ -41,95 +41,38 @@
         <section class="criar-quizz__perguntas esconder">
             <h2 class="subtitulo">Crie suas perguntas</h2>
 
-            <div class="criar-quizz__perguntas__info">
+            <div id="x1" class="criar-quizz__perguntas__info">
                 <div>
                     <span>Pergunta 1</span>
-                    <img src="./img/Vector.svg"/>
+                    <img src="./img/Vector.svg" onclick="contrair(this)"/>
                 </div>
                 <input class="criar-quizz__input" type="text" placeholder="Texto da pergunta"/>
-                <input class="criar-quizz__input" type="text" placeholder="Cor de fundo da pergunta"/>
+                <input id="fundo" class="criar-quizz__input" type="text" placeholder="Cor de fundo da pergunta"/>
                 
                 <span>Resposta correta</span>
                 <input class="criar-quizz__input" type="text" placeholder="Resposta correta"/>
-                <input class="criar-quizz__input" type="text" placeholder="URL da imagem"/>
+                <input id="url" class="criar-quizz__input" type="url" placeholder="URL da imagem"/>
 
                 <span>Respostas incorretas</span>
                 <div>
                     <input class="criar-quizz__input" type="text" placeholder="Resposta incorreta 1"/>
-                    <input class="criar-quizz__input" type="text" placeholder="URL da imagem 1"/>    
+                    <input id="url" class="criar-quizz__input" type="url" placeholder="URL da imagem 1"/>    
                 </div>
 
                 <div>
                     <input class="criar-quizz__input" type="text" placeholder="Resposta incorreta 2"/>
-                    <input class="criar-quizz__input" type="text" placeholder="URL da imagem 2"/>
+                    <input id="url" class="criar-quizz__input" type="url" placeholder="URL da imagem 2"/>
                 </div>
 
                 <div>
                     <input class="criar-quizz__input" type="text" placeholder="Resposta incorreta 3"/>
-                    <input class="criar-quizz__input" type="text" placeholder="URL da imagem 3"/>
+                    <input id="url" class="criar-quizz__input" type="url" placeholder="URL da imagem 3"/>
                 </div>
             </div>
 
-            <div class="criar-quizz__perguntas__info contraido">
-                <div>
-                    <span>Pergunta 2</span>
-                    <img src="./img/Vector.svg"/>
-                </div>
-                <input class="criar-quizz__input" type="text" placeholder="Texto da pergunta"/>
-                <input class="criar-quizz__input" type="text" placeholder="Cor de fundo da pergunta"/>
-                
-                <span>Resposta correta</span>
-                <input class="criar-quizz__input" type="text" placeholder="Resposta correta"/>
-                <input class="criar-quizz__input" type="text" placeholder="URL da imagem"/>
-
-                <span>Respostas incorretas</span>
-                <div>
-                    <input class="criar-quizz__input" type="text" placeholder="Resposta incorreta 1"/>
-                    <input class="criar-quizz__input" type="text" placeholder="URL da imagem 1"/>    
-                </div>
-
-                <div>
-                    <input class="criar-quizz__input" type="text" placeholder="Resposta incorreta 2"/>
-                    <input class="criar-quizz__input" type="text" placeholder="URL da imagem 2"/>
-                </div>
-
-                <div>
-                    <input class="criar-quizz__input" type="text" placeholder="Resposta incorreta 3"/>
-                    <input class="criar-quizz__input" type="text" placeholder="URL da imagem 3"/>
-                </div>
-            </div>
-
-            <div class="criar-quizz__perguntas__info contraido">
-                <div>
-                    <span>Pergunta 3</span>
-                    <img src="./img/Vector.svg"/>
-                </div>
-                <input class="criar-quizz__input" type="text" placeholder="Texto da pergunta"/>
-                <input class="criar-quizz__input" type="text" placeholder="Cor de fundo da pergunta"/>
-                
-                <span>Resposta correta</span>
-                <input class="criar-quizz__input" type="text" placeholder="Resposta correta"/>
-                <input class="criar-quizz__input" type="text" placeholder="URL da imagem"/>
-
-                <span>Respostas incorretas</span>
-                <div>
-                    <input class="criar-quizz__input" type="text" placeholder="Resposta incorreta 1"/>
-                    <input class="criar-quizz__input" type="text" placeholder="URL da imagem 1"/>    
-                </div>
-
-                <div>
-                    <input class="criar-quizz__input" type="text" placeholder="Resposta incorreta 2"/>
-                    <input class="criar-quizz__input" type="text" placeholder="URL da imagem 2"/>
-                </div>
-
-                <div>
-                    <input class="criar-quizz__input" type="text" placeholder="Resposta incorreta 3"/>
-                    <input class="criar-quizz__input" type="text" placeholder="URL da imagem 3"/>
-                </div>
-            </div>
         </section>
 
-        <section class="criar-quizz__niveis">
+        <section class="criar-quizz__niveis esconder">
             <h2 class="subtitulo">Agora, decida os níveis</h2>
 
             <div class="criar-quizz__niveis__info">
