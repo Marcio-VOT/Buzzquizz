@@ -1,129 +1,174 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="stylesheet" href="./styles/reset.css"/>
-    <link rel="stylesheet" href="./styles/style.css"/>
+    <link rel="stylesheet" href="./styles/reset.css" />
+    <link rel="stylesheet" href="./styles/style.css" />
 
-    <link rel="stylesheet" href="./styles/cabecalho/cabecalho.css"/>
+    <link rel="stylesheet" href="./styles/cabecalho/cabecalho.css" />
 
-    <link rel="stylesheet" href="./styles/container/container.css"/>
-    <link rel="stylesheet" href="./styles/container/container-proximo.css"/>
-    <link rel="stylesheet" href="./styles/container/container-voltar.css"/>
-    
-    <link rel="stylesheet" href="./styles/quizzes/quizz.css"/>
+    <link rel="stylesheet" href="./styles/container/container.css" />
+    <link rel="stylesheet" href="./styles/container/container-proximo.css" />
+    <link rel="stylesheet" href="./styles/container/container-voltar.css" />
 
-    <link rel="stylesheet" href="./styles/criar-quizz/criar-quizz-comeco.css"/>
-    <link rel="stylesheet" href="./styles/criar-quizz/criar-quizz-comeco-info.css"/>
-    <link rel="stylesheet" href="./styles/criar-quizz/criar-quizz-input.css"/>
+    <link rel="stylesheet" href="./styles/quizzes/quizz.css" />
+
+    <link rel="stylesheet" href="./styles/criar-quizz/criar-quizz-comeco.css" />
+    <link
+      rel="stylesheet"
+      href="./styles/criar-quizz/criar-quizz-comeco-info.css"
+    />
+    <link rel="stylesheet" href="./styles/criar-quizz/criar-quizz-input.css" />
 
     <title>BuzzQuizz</title>
-</head>
-<body>
+  </head>
+  <body>
     <header class="cabecalho">
-        <h1>BuzzQuizz</h1>
+      <h1>BuzzQuizz</h1>
     </header>
 
     <main class="container">
-        <section class="criar-quizz__comeco ">
-            <h2 class="subtitulo">Comece pelo começo</h2>
+      <section class="criar-quizz__comeco">
+        <h2 class="subtitulo">Comece pelo começo</h2>
 
-            <div class="criar-quizz__comeco__info">
-                <input class="criar-quizz__input" type="text" placeholder="Título do seu quizz" minlength="20" maxlength="65"/>
-                <input class="criar-quizz__input" type="url" placeholder="URL da imagem do seu quizz"/>
-                <input class="criar-quizz__input" type="number" min="3" placeholder="Quantidade de perguntas do quizz"/>
-                <input class="criar-quizz__input" type="number" min="2" placeholder="Quantidade de níveis do quizz"/>
-            </div>
-        </section>
-        
-        <section class="criar-quizz__perguntas esconder">
-            <h2 class="subtitulo">Crie suas perguntas</h2>
+        <div class="criar-quizz__comeco__info">
+          <input
+            class="criar-quizz__input"
+            type="text"
+            placeholder="Título do seu quizz"
+            minlength="20"
+            maxlength="65"
+          />
+          <input
+            class="criar-quizz__input"
+            type="url"
+            placeholder="URL da imagem do seu quizz"
+          />
+          <input
+            class="criar-quizz__input"
+            type="number"
+            min="3"
+            placeholder="Quantidade de perguntas do quizz"
+          />
+          <input
+            class="criar-quizz__input"
+            type="number"
+            min="2"
+            placeholder="Quantidade de níveis do quizz"
+          />
+        </div>
+      </section>
 
-            <div id="x1" class="criar-quizz__perguntas__info">
-                <div>
-                    <span>Pergunta 1</span>
-                    <img src="./img/Vector.svg" onclick="contrair(this)"/>
-                </div>
-                <input class="criar-quizz__input" type="text" placeholder="Texto da pergunta"/>
-                <input id="fundo" class="criar-quizz__input" type="text" placeholder="Cor de fundo da pergunta"/>
-                
-                <span>Resposta correta</span>
-                <input class="criar-quizz__input" type="text" placeholder="Resposta correta"/>
-                <input id="url" class="criar-quizz__input" type="url" placeholder="URL da imagem"/>
+      <section class="criar-quizz__perguntas esconder">
+        <h2 class="subtitulo">Crie suas perguntas</h2>
+      </section>
 
-                <span>Respostas incorretas</span>
-                <div>
-                    <input class="criar-quizz__input" type="text" placeholder="Resposta incorreta 1"/>
-                    <input id="url" class="criar-quizz__input" type="url" placeholder="URL da imagem 1"/>    
-                </div>
+      <section class="criar-quizz__niveis esconder">
+        <h2 class="subtitulo">Agora, decida os níveis</h2>
 
-                <div>
-                    <input class="criar-quizz__input" type="text" placeholder="Resposta incorreta 2"/>
-                    <input id="url" class="criar-quizz__input" type="url" placeholder="URL da imagem 2"/>
-                </div>
+        <div class="criar-quizz__niveis__info">
+          <div>
+            <span>Nível 1</span>
+            <img src="./img/Vector.svg" />
+          </div>
 
-                <div>
-                    <input class="criar-quizz__input" type="text" placeholder="Resposta incorreta 3"/>
-                    <input id="url" class="criar-quizz__input" type="url" placeholder="URL da imagem 3"/>
-                </div>
-            </div>
+          <input
+            class="criar-quizz__input"
+            type="text"
+            placeholder="Título do nível"
+          />
+          <input
+            class="criar-quizz__input"
+            type="number"
+            placeholder="% de acerto mínima"
+          />
+          <input
+            class="criar-quizz__input"
+            type="url"
+            placeholder="URL da imagem do nível"
+          />
+          <input
+            class="criar-quizz__input"
+            type="text"
+            placeholder="Descrição do nível"
+          />
+        </div>
 
-        </section>
+        <div class="criar-quizz__niveis__info contraido">
+          <div>
+            <span>Nível 2</span>
+            <img src="./img/Vector.svg" />
+          </div>
 
-        <section class="criar-quizz__niveis esconder">
-            <h2 class="subtitulo">Agora, decida os níveis</h2>
+          <input
+            class="criar-quizz__input"
+            type="text"
+            placeholder="Título do nível"
+          />
+          <input
+            class="criar-quizz__input"
+            type="number"
+            placeholder="% de acerto mínima"
+          />
+          <input
+            class="criar-quizz__input"
+            type="url"
+            placeholder="URL da imagem do nível"
+          />
+          <input
+            class="criar-quizz__input"
+            type="text"
+            placeholder="Descrição do nível"
+          />
+        </div>
 
-            <div class="criar-quizz__niveis__info">
-                <div>
-                    <span>Nível 1</span>
-                    <img src="./img/Vector.svg"/>
-                </div>
-                
-                <input class="criar-quizz__input" type="text" placeholder="Título do nível"/>
-                <input class="criar-quizz__input" type="number" placeholder="% de acerto mínima"/>
-                <input class="criar-quizz__input" type="url" placeholder="URL da imagem do nível"/>
-                <input class="criar-quizz__input" type="text" placeholder="Descrição do nível"/>
-            </div>
+        <div class="criar-quizz__niveis__info contraido">
+          <div>
+            <span>Nível 1</span>
+            <img src="./img/Vector.svg" />
+          </div>
+          <input
+            class="criar-quizz__input"
+            type="text"
+            placeholder="Título do nível"
+          />
+          <input
+            class="criar-quizz__input"
+            type="number"
+            placeholder="% de acerto mínima"
+          />
+          <input
+            class="criar-quizz__input"
+            type="url"
+            placeholder="URL da imagem do nível"
+          />
+          <input
+            class="criar-quizz__input"
+            type="text"
+            placeholder="Descrição do nível"
+          />
+        </div>
+      </section>
 
-            <div class="criar-quizz__niveis__info contraido">
-                <div>
-                    <span>Nível 2</span>
-                    <img src="./img/Vector.svg"/>
-                </div>
-                
-                <input class="criar-quizz__input" type="text" placeholder="Título do nível"/>
-                <input class="criar-quizz__input" type="number" placeholder="% de acerto mínima"/>
-                <input class="criar-quizz__input" type="url" placeholder="URL da imagem do nível"/>
-                <input class="criar-quizz__input" type="text" placeholder="Descrição do nível"/>
-            </div>
-
-            <div class="criar-quizz__niveis__info contraido">
-                <div>
-                    <span>Nível 1</span>
-                    <img src="./img/Vector.svg"/>
-                </div>
-                <input class="criar-quizz__input" type="text" placeholder="Título do nível"/>
-                <input class="criar-quizz__input" type="number" placeholder="% de acerto mínima"/>
-                <input class="criar-quizz__input" type="url" placeholder="URL da imagem do nível"/>
-                <input class="criar-quizz__input" type="text" placeholder="Descrição do nível"/>
-            </div>
-        </section>
-
-        <section class="criar-quiz__fim">
-            <h2 class="subtitulo-final">Seu quizz está pronto!</h2>
-            <div class="quizz-final">
-                <!--img src="https://i.pinimg.com/564x/0a/93/13/0a931365bef1418e9a779e5055676f98.jpg" alt="gato"/-->
-                <span>Acerte os personagens corretos dos Simpsons e prove seu amor!</span>
-            </div>
-        </section>
-
-        <button class="container__proximo" onclick="testaCriar()">Prosseguir pra criar perguntas</button>
+      <section class="criar-quiz__fim esconder">
+        <h2 class="subtitulo-final">Seu quizz está pronto!</h2>
+        <div class="quizz-final">
+          <!--img src="https://i.pinimg.com/564x/0a/93/13/0a931365bef1418e9a779e5055676f98.jpg" alt="gato"/-->
+          <span
+            >Acerte os personagens corretos dos Simpsons e prove seu amor!</span
+          >
+        </div>
         <button class="container__voltar" onclick="">Voltar pra home</button>
+      </section>
+
+      <button class="container__proximo" onclick="testaCriar()">
+        Prosseguir pra criar perguntas
+      </button>
     </main>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="CriarQuizz.js"></script>
-</body>
+  </body>
 </html>

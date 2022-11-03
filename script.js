@@ -12,7 +12,7 @@ function adicionaQuizz(resultadoAPI){
     for(let i = 0; i < array.length; i++){
         quizzLista.innerHTML +=`
         <div class="quizz x${array[i].id}">
-        <!--img src="${array[i].image}" alt="gato"/-->
+        <img src="${array[i].image}" alt="gato"/>
         <span>${array[i].title}</span>
         </div>
         `
