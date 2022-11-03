@@ -21,9 +21,13 @@ html{
     font-size: 10px;
 }
 
-.subtitulo{
+.subtitulo, .subtitulo-final{
     font-size: 2rem;
     font-weight: 700;
+}
+
+.subtitulo-final{
+    margin-bottom: 4rem;
 }
 
 section.esconder{

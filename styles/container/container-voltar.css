@@ -1,0 +1,13 @@
+
+.container__voltar{
+    font-size: 2.1rem;
+    font-weight: 400;
+    color: #818181;
+
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+
+    height: 4rem;
+    margin-top: .9rem;
+    cursor: pointer;
+}

@@ -1,8 +1,10 @@
 
 .criar-quizz__comeco, .criar-quizz__perguntas,
-.criar-quizz__niveis{
+.criar-quizz__niveis, .criar-quiz__fim{
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
+
+    width: 100%;
 }
