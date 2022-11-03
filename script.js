@@ -13,11 +13,15 @@ function adicionaQuizz(resultadoAPI) {
 
   for (let i = 0; i < array.length; i++) {
     quizzLista.innerHTML += `
-        <div class="quizz x${array[i].id}">
+        <div class="quizz" data-id="${array[i].id}" onclick="abrirQuizz(this)">
         <img src="${array[i].image}" alt="gato"/>
         <span>${array[i].title}</span>
         </div>
         `;
     console.log("a");
   }
+}
+
+function abrirQuizz(quizz) {
+  window.open("./quizz.html", "_self");
 }
