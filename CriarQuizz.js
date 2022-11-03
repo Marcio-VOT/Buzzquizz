@@ -3,6 +3,7 @@ const colorFilter = /^#/i;
 let quantPerguntas;
 let quantNiveis;
 let quiz = { title: "", image: "", questions: [] };
+let flag;
 
 function testaCriar() {
   const titulo = document.querySelector(
@@ -64,7 +65,6 @@ function contrair(pergunta) {
   }
   pergunta.parentElement.parentElement.classList.remove("contraido");
 }
-
 function adicionaPerguntas() {
   const perguntas = document.querySelector(".criar-quizz__perguntas");
   for (i = 1; i <= quantPerguntas; i++) {
@@ -103,7 +103,6 @@ function adicionaPerguntas() {
     .querySelector(".criar-quizz__perguntas__info")
     .classList.remove("contraido");
 }
-let flag;
 function testaPerguntas() {
   let alerta = true;
   for (i = 1; i <= quantPerguntas; i++) {
@@ -158,11 +157,52 @@ function testaPerguntas() {
     ) {
       alerta = false;
     }
+    if (alerta === true) {
+      quiz.questions.push({
+        title: listaPergunta[0].value,
+        color: listaPergunta[1].value,
+        answers: [
+          {
+            text: listaPergunta[2].value,
+            image: listaPergunta[3].value,
+            isCorrectAnswer: true,
+          },
+          {
+            text: listaPergunta[4].value,
+            image: listaPergunta[5].value,
+            isCorrectAnswer: false,
+          },
+        ],
+      });
+      if (listaPergunta[6].value != "") {
+        quiz.questions[i - 1].answers.push({
+          text: listaPergunta[6].value,
+          image: listaPergunta[7].value,
+          isCorrectAnswer: false,
+        });
+      }
+      if (listaPergunta[8].value != "") {
+        quiz.questions[i - 1].answers.push({
+          text: listaPergunta[8].value,
+          image: listaPergunta[9].value,
+          isCorrectAnswer: false,
+        });
+      }
+    }
   }
-  if (alerta === false) alert("preencha as perguntas corretamente");
-  else alert("deu tudo certo, vai dormir");
+  if (alerta === false) {
+    alert("preencha as perguntas corretamente");
+    quiz.questions = [];
+  } else {
+    document.querySelector(".criar-quizz__perguntas").classList.add("esconder");
+    document.querySelector(".container__proximo").innerHTML = "Finalizar Quizz";
+    document.querySelector(".criar-quizz__niveis").classList.remove("esconder");
+    document
+      .querySelector(".container__proximo")
+      .setAttribute("onclick", "testaNiveis()");
+    adicionaNiveis();
+  }
 }
-
 function testaCor(valor) {
   flag = true;
 
@@ -182,5 +222,3 @@ function testaCor(valor) {
     }
   }
 }
-//  /[abcdef]/gi
-//const urlSelector = document.querySelectorAll(".criar-quizz__input#url")
