@@ -20,6 +20,18 @@
     cursor: pointer;
 }
 
+.quizz img, .quizz-final img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+
+    transition: 1s;
+}
+
+.quizz:hover img, .quizz-final:hover img{
+    transform: scale(1.15);
+}
+
 
 .quizz span, .quizz-final span{
     display: flex;
