@@ -6,6 +6,8 @@ promisse.catch(function () {
   alert("erro");
 });
 
+let listaQuizzes = [];
+
 function adicionaQuizz(resultadoAPI) {
   const array = resultadoAPI.data;
   const quizzLista = document.querySelector(".quizzes__lista");
@@ -19,9 +21,17 @@ function adicionaQuizz(resultadoAPI) {
         </div>
         `;
     console.log("a");
+
+    listaQuizzes.push(array[i]);
   }
 }
 
 function abrirQuizz(quizz) {
+
+  let quizzSelecionado = listaQuizzes.find(item => item.id === Number(quizz.getAttribute("data-id")));
+  quizzSelecionado = JSON.stringify(quizzSelecionado);
+
+  localStorage.setItem("quizzSelecionado", quizzSelecionado);
+
   window.open("./quizz.html", "_self");
 }
