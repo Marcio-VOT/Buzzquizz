@@ -1,9 +1,8 @@
 
-const cabecalhoImg = document.querySelector('[data-img="cabecalho"]');
-
 let quizzSelecionado;
 
 selecionaQuizz();
+carregaQuizz();
 
 function selecionaQuizz() {
     quizzSelecionado = localStorage.getItem("quizzSelecionado");
@@ -14,4 +13,13 @@ function selecionaQuizz() {
     }
 
     quizzSelecionado = JSON.parse(quizzSelecionado);
+    console.log(quizzSelecionado);
+}
+
+function carregaQuizz() {
+    const cabecalhoImg = document.querySelector('[data-cabecalho="imagem"]');
+    const cabecalhoTitulo = document.querySelector('[data-cabecalho="titulo"]');
+
+    cabecalhoImg.setAttribute("src", quizzSelecionado.image);
+    cabecalhoTitulo.innerHTML = quizzSelecionado.title;
 }
