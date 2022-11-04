@@ -58,7 +58,7 @@ function testaCriar() {
     adicionaPerguntas();
   }
 }
-function contrair(pergunta) {
+function contrairPergunta(pergunta) {
   const node = document.querySelectorAll(".criar-quizz__perguntas__info");
   for (let i = 0; i < node.length; i++) {
     node[i].classList.add("contraido");
@@ -72,7 +72,7 @@ function adicionaPerguntas() {
         <div id="x${i}" class="criar-quizz__perguntas__info contraido">
         <div>
             <span>Pergunta ${i}</span>
-            <img src="./img/Vector.svg" onclick="contrair(this)"/>
+            <img src="./img/Vector.svg" onclick="contrairPergunta(this)"/>
         </div>
             <input class="criar-quizz__input" type="text" minLength="20" placeholder="Texto da pergunta"/>
             <input class="criar-quizz__input" type="text" maxLength="7" placeholder="Cor de fundo da pergunta"/>
@@ -220,5 +220,95 @@ function testaCor(valor) {
         flag = false;
       }
     }
+  }
+}
+function contrairNiveis(pergunta) {
+  const node = document.querySelectorAll(".criar-quizz__niveis__info");
+  for (let i = 0; i < node.length; i++) {
+    node[i].classList.add("contraido");
+  }
+  pergunta.parentElement.parentElement.classList.remove("contraido");
+}
+function adicionaNiveis() {
+  const seg_nivel = document.querySelector(".criar-quizz__niveis");
+  for (let i = 1; i <= quantNiveis; i++) {
+    seg_nivel.innerHTML += `
+    <div id="a${i}" class="criar-quizz__niveis__info contraido">
+    <div>
+      <span>Nível ${i}</span>
+      <img src="./img/Vector.svg" onclick="contrairNiveis(this)"/>
+    </div>
+    <input
+      class="criar-quizz__input"
+      type="text"
+      placeholder="Título do nível"
+      minLength="10"
+    />
+    <input
+      class="criar-quizz__input"
+      type="number"
+      placeholder="% de acerto mínima"
+      min="0"
+      max="100"
+    />
+    <input
+      class="criar-quizz__input"
+      type="url"
+      placeholder="URL da imagem do nível"
+    />
+    <input
+      class="criar-quizz__input"
+      type="text"
+      placeholder="Descrição do nível"
+      minLength="30"
+    />
+    </div>
+    `;
+  }
+}
+function testaNiveis() {
+  let verifica = true;
+  let porcentagemMin = 100;
+  for (let i = 1; i <= quantNiveis; i++) {
+    const listaNiveis = document
+      .getElementById(`a${i}`)
+      .querySelectorAll(".criar-quizz__input");
+
+    if (listaNiveis[0].value.length < listaNiveis[0].minLength) {
+      verifica = false;
+      console.log("erro 1");
+    }
+    if (
+      !(
+        Number(listaNiveis[1].value) >= listaNiveis[1].min &&
+        Number(listaNiveis[1].value) <= listaNiveis[1].max
+      )
+    ) {
+      verifica = false;
+      console.log("erro 2");
+      console.log(listaNiveis[1].value);
+      console.log("min " + listaNiveis[1].min);
+      console.log("max " + listaNiveis[1].max);
+    }
+    if (urlFilter.test(listaNiveis[2].value) != true) {
+      verifica = false;
+      console.log("erro 3");
+    }
+    if (listaNiveis[3].value.length < listaNiveis[3].minLength) {
+      verifica = false;
+      console.log("erro 4");
+    }
+    if (verifica) {
+      if (Number(listaNiveis[1].value) < porcentagemMin)
+        porcentagemMin = Number(listaNiveis[1].value);
+    }
+  }
+
+  if (porcentagemMin !== 0) {
+    verifica = false;
+    console.log("erro 5");
+  }
+  if (verifica) {
+    console.log("Hello There!");
   }
 }
