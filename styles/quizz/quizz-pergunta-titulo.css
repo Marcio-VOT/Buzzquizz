@@ -1,0 +1,16 @@
+
+.quizz-pergunta__titulo{
+    text-align: center;
+
+    background-color: brown;
+    padding: 3.5rem 0;
+    margin-bottom: 1.8rem;
+
+    width: 100%;
+}
+
+.quizz-pergunta__titulo h3{
+    font-size: 2.3rem;
+    font-weight: 700;
+    color: var(--clr-ft-titulo);
+}

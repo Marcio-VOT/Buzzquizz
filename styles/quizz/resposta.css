@@ -1,0 +1,21 @@
+
+.resposta{
+    margin-bottom: 1.8rem;
+    height: auto;
+    width: calc(50% - 1.2rem);
+}
+
+.resposta img{
+    margin-bottom: 1.3rem;
+
+    height: 17.5rem;
+    width: 100%;
+
+    object-fit: cover;
+    cursor: pointer;
+}
+
+.resposta span{
+    font-size: 2rem;
+    font-weight: 700;
+}
