@@ -48,8 +48,8 @@ function carregaPerguntas() {
 
         const respostas = embaralharRespostas(perguntas[i].answers);
         
+        console.log(respostas.length);
         for (let j = 0; j < respostas.length; j++) {
-
             const respostaAlternativa = document.createElement("div");
             respostaAlternativa.classList.add("resposta");
             const respostaImagem = document.createElement("img");
@@ -63,7 +63,7 @@ function carregaPerguntas() {
             respostaAlternativa.appendChild(respostaImagem);
             respostaAlternativa.appendChild(respostaTexto);
             containerRespostas.appendChild(respostaAlternativa);
-            console.log(containerRespostas);
+            
         }
 
 
@@ -77,13 +77,13 @@ function carregaPerguntas() {
 }
 
 function embaralharRespostas(respostas){
-    let tempArray = [];
-    for (let i = 0; i < respostas.length; i++) {
-        let index = Math.floor(Math.random() * respostas.length);
-        tempArray.push(respostas[index]);
-        
-        respostas.splice(index, 1);
-    }
 
-    return tempArray;
+    respostas.sort(comparador);
+
+    return respostas;
+
+}
+
+function comparador() { 
+    return Math.random() - 0.5; 
 }
