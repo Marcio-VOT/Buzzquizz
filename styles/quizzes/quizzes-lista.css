@@ -1,9 +1,8 @@
+.quizzes__lista {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
 
-.quizzes__lista{
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    flex-wrap: wrap;
-
-    width: 100%;
+  width: 100%;
 }

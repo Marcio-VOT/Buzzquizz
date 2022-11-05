@@ -1,10 +1,15 @@
-
-.quizzes__meus-quizzes > div:nth-child(1){
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
+.quizzes__meus-quizzes > div:nth-child(1) {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
 }
 
-.quizzes__meus-quizzes > div:nth-child(1) > h2{
-    padding-right: 2.6rem;
+.quizzes__meus-quizzes > div:nth-child(1) > h2 {
+  padding-right: 2.6rem;
+}
+.quizzes__lista-usuario {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 48px;
 }
