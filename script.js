@@ -27,8 +27,9 @@ function adicionaQuizz(resultadoAPI) {
 }
 
 function abrirQuizz(quizz) {
-
-  let quizzSelecionado = listaQuizzes.find(item => item.id === Number(quizz.getAttribute("data-id")));
+  let quizzSelecionado = listaQuizzes.find(
+    (item) => item.id === Number(quizz.getAttribute("data-id"))
+  );
   quizzSelecionado = JSON.stringify(quizzSelecionado);
 
   localStorage.setItem("quizzSelecionado", quizzSelecionado);

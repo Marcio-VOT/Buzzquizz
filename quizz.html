@@ -1,89 +1,111 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="stylesheet" href="./styles/reset.css"/>
-    <link rel="stylesheet" href="./styles/style.css"/>
+    <link rel="stylesheet" href="./styles/reset.css" />
+    <link rel="stylesheet" href="./styles/style.css" />
 
-    <link rel="stylesheet" href="./styles/cabecalho/cabecalho.css"/>
+    <link rel="stylesheet" href="./styles/cabecalho/cabecalho.css" />
 
-    <link rel="stylesheet" href="./styles/container/container.css"/>
+    <link rel="stylesheet" href="./styles/container/container.css" />
 
-    <link rel="stylesheet" href="./styles/quizz/quizz-cabecalho.css"/>
-    <link rel="stylesheet" href="./styles/quizz/quizz-pergunta.css"/>
-    <link rel="stylesheet" href="./styles/quizz/quizz-pergunta-titulo.css"/>
-    <link rel="stylesheet" href="./styles/quizz/quizz-pergunta-respostas.css"/>
-    <link rel="stylesheet" href="./styles/quizz/resposta.css"/>
-    
+    <link rel="stylesheet" href="./styles/quizz/quizz-cabecalho.css" />
+    <link rel="stylesheet" href="./styles/quizz/quizz-pergunta.css" />
+    <link rel="stylesheet" href="./styles/quizz/quizz-pergunta-titulo.css" />
+    <link rel="stylesheet" href="./styles/quizz/quizz-pergunta-respostas.css" />
+    <link rel="stylesheet" href="./styles/quizz/resposta.css" />
+
     <title>BuzzQuizz</title>
-</head>
-<body>
+  </head>
+  <body>
     <header class="cabecalho">
-        <h1>BuzzQuizz</h1>
+      <h1>BuzzQuizz</h1>
     </header>
 
     <main class="container container-quizz">
-        <div class="quizz-cabecalho">
-            <img src="" data-cabecalho="imagem"/>
-            <h2 data-cabecalho="titulo"></h2>
+      <div class="quizz-cabecalho">
+        <img src="" data-cabecalho="imagem" />
+        <h2 data-cabecalho="titulo"></h2>
+      </div>
+
+      <section class="quizz-pergunta">
+        <div class="quizz-pergunta__titulo">
+          <h3 data-pergunta="titulo-pergunta">Qual gato mais bonito?</h3>
         </div>
 
-        <section class="quizz-pergunta">
-            <div class="quizz-pergunta__titulo">
-                <h3 data-pergunta="titulo-pergunta">Qual gato mais bonito?</h3>
-            </div>
+        <div class="quizz-pergunta__respostas">
+          <div class="resposta">
+            <img
+              src="https://i.pinimg.com/236x/3d/f9/93/3df993178c11a21410e1debc9d2725a1.jpg"
+              data-resposta="imagem-resposta"
+            />
+            <span data-resposta="texto-resposta">gato gatinho</span>
+          </div>
+          <div class="resposta">
+            <img
+              src="https://i.pinimg.com/236x/3d/f9/93/3df993178c11a21410e1debc9d2725a1.jpg"
+              data-resposta="imagem-resposta"
+            />
+            <span data-resposta="texto-resposta">gato gatinho</span>
+          </div>
+          <div class="resposta">
+            <img
+              src="https://i.pinimg.com/236x/3d/f9/93/3df993178c11a21410e1debc9d2725a1.jpg"
+              data-resposta="imagem-resposta"
+            />
+            <span data-resposta="texto-resposta">gato gatinho</span>
+          </div>
+          <div class="resposta">
+            <img
+              src="https://i.pinimg.com/236x/3d/f9/93/3df993178c11a21410e1debc9d2725a1.jpg"
+              data-resposta="imagem-resposta"
+            />
+            <span data-resposta="texto-resposta">gato gatinho</span>
+          </div>
+        </div>
+      </section>
+      <section class="quizz-pergunta">
+        <div class="quizz-pergunta__titulo">
+          <h3 data-pergunta="titulo-pergunta">Qual gato mais bonito?</h3>
+        </div>
 
-
-            <div class="quizz-pergunta__respostas">
-                <div class="resposta">
-                    <img src="https://i.pinimg.com/236x/3d/f9/93/3df993178c11a21410e1debc9d2725a1.jpg" data-resposta="imagem-resposta"/>
-                    <span data-resposta="texto-resposta">gato gatinho</span>
-                </div>
-                <div class="resposta">
-                    <img src="https://i.pinimg.com/236x/3d/f9/93/3df993178c11a21410e1debc9d2725a1.jpg" data-resposta="imagem-resposta"/>
-                    <span data-resposta="texto-resposta">gato gatinho</span>
-                </div>
-                <div class="resposta">
-                    <img src="https://i.pinimg.com/236x/3d/f9/93/3df993178c11a21410e1debc9d2725a1.jpg" data-resposta="imagem-resposta"/>
-                    <span data-resposta="texto-resposta">gato gatinho</span>
-                </div>
-                <div class="resposta">
-                    <img src="https://i.pinimg.com/236x/3d/f9/93/3df993178c11a21410e1debc9d2725a1.jpg" data-resposta="imagem-resposta"/>
-                    <span data-resposta="texto-resposta">gato gatinho</span>
-                </div>
-            </div>
-        </section>
-        <section class="quizz-pergunta">
-            <div class="quizz-pergunta__titulo">
-                <h3 data-pergunta="titulo-pergunta">Qual gato mais bonito?</h3>
-            </div>
-
-
-            <div class="quizz-pergunta__respostas">
-                <div class="resposta">
-                    <img src="https://i.pinimg.com/236x/3d/f9/93/3df993178c11a21410e1debc9d2725a1.jpg" data-resposta="imagem-resposta"/>
-                    <span data-resposta="texto-resposta">gato gatinho</span>
-                </div>
-                <div class="resposta">
-                    <img src="https://i.pinimg.com/236x/3d/f9/93/3df993178c11a21410e1debc9d2725a1.jpg" data-resposta="imagem-resposta"/>
-                    <span data-resposta="texto-resposta">gato gatinho</span>
-                </div>
-                <div class="resposta">
-                    <img src="https://i.pinimg.com/236x/3d/f9/93/3df993178c11a21410e1debc9d2725a1.jpg" data-resposta="imagem-resposta"/>
-                    <span data-resposta="texto-resposta">gato gatinho</span>
-                </div>
-                <div class="resposta">
-                    <img src="https://i.pinimg.com/236x/3d/f9/93/3df993178c11a21410e1debc9d2725a1.jpg" data-resposta="imagem-resposta"/>
-                    <span data-resposta="texto-resposta">gato gatinho</span>
-                </div>
-            </div>
-        </section>
+        <div class="quizz-pergunta__respostas">
+          <div class="resposta">
+            <img
+              src="https://i.pinimg.com/236x/3d/f9/93/3df993178c11a21410e1debc9d2725a1.jpg"
+              data-resposta="imagem-resposta"
+            />
+            <span data-resposta="texto-resposta">gato gatinho</span>
+          </div>
+          <div class="resposta">
+            <img
+              src="https://i.pinimg.com/236x/3d/f9/93/3df993178c11a21410e1debc9d2725a1.jpg"
+              data-resposta="imagem-resposta"
+            />
+            <span data-resposta="texto-resposta">gato gatinho</span>
+          </div>
+          <div class="resposta">
+            <img
+              src="https://i.pinimg.com/236x/3d/f9/93/3df993178c11a21410e1debc9d2725a1.jpg"
+              data-resposta="imagem-resposta"
+            />
+            <span data-resposta="texto-resposta">gato gatinho</span>
+          </div>
+          <div class="resposta">
+            <img
+              src="https://i.pinimg.com/236x/3d/f9/93/3df993178c11a21410e1debc9d2725a1.jpg"
+              data-resposta="imagem-resposta"
+            />
+            <span data-resposta="texto-resposta">gato gatinho</span>
+          </div>
+        </div>
+      </section>
     </main>
-    
+
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="quizz.js"></script>
-</body>
+  </body>
 </html>

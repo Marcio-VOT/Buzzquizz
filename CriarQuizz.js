@@ -1,10 +1,16 @@
+if (localStorage.getItem("MeusQuizzes") == null) {
+  localStorage.setItem("MeusQuizzes", "");
+}
+
 const urlFilter = /^https:\/\//i;
 const colorFilter = /^#/i;
 let quantPerguntas;
 let quantNiveis;
-let quiz = { title: "", image: "", questions: [] };
+let quiz = { title: "", image: "", questions: [], levels: [] };
 let flag;
-
+let testaPCT = [];
+let passaQuizz;
+document.querySelector(".container__voltar").style.display = "none";
 function testaCriar() {
   const titulo = document.querySelector(
     ".criar-quizz__comeco__info :nth-child(1)"
@@ -110,7 +116,7 @@ function testaPerguntas() {
       .getElementById(`x${i}`)
       .querySelectorAll(".criar-quizz__input");
     testaCor(listaPergunta[1].value);
-    if (alerta === true) {
+    if (alerta) {
       alerta = flag;
     }
     if (listaPergunta[0].value.length < listaPergunta[0].minLength) {
@@ -157,7 +163,7 @@ function testaPerguntas() {
     ) {
       alerta = false;
     }
-    if (alerta === true) {
+    if (alerta) {
       quiz.questions.push({
         title: listaPergunta[0].value,
         color: listaPergunta[1].value,
@@ -265,6 +271,9 @@ function adicionaNiveis() {
     </div>
     `;
   }
+  document
+    .querySelector(".criar-quizz__niveis__info")
+    .classList.remove("contraido");
 }
 function testaNiveis() {
   let verifica = true;
@@ -276,7 +285,6 @@ function testaNiveis() {
 
     if (listaNiveis[0].value.length < listaNiveis[0].minLength) {
       verifica = false;
-      console.log("erro 1");
     }
     if (
       !(
@@ -285,30 +293,82 @@ function testaNiveis() {
       )
     ) {
       verifica = false;
-      console.log("erro 2");
-      console.log(listaNiveis[1].value);
-      console.log("min " + listaNiveis[1].min);
-      console.log("max " + listaNiveis[1].max);
     }
     if (urlFilter.test(listaNiveis[2].value) != true) {
       verifica = false;
-      console.log("erro 3");
     }
     if (listaNiveis[3].value.length < listaNiveis[3].minLength) {
       verifica = false;
-      console.log("erro 4");
     }
+    testaPCT.push(listaNiveis[1].value);
     if (verifica) {
       if (Number(listaNiveis[1].value) < porcentagemMin)
         porcentagemMin = Number(listaNiveis[1].value);
+      quiz.levels.push({
+        title: listaNiveis[0].value,
+        image: listaNiveis[2].value,
+        text: listaNiveis[3].value,
+        minValue: listaNiveis[1].value,
+      });
     }
   }
-
+  for (let i = 0; i < testaPCT.length; i++) {
+    for (let j = 0; j < testaPCT.length; j++) {
+      if (j != i) {
+        if (testaPCT[i] == testaPCT[j]) {
+          verifica = false;
+        }
+      }
+    }
+  }
   if (porcentagemMin !== 0) {
     verifica = false;
-    console.log("erro 5");
   }
+
   if (verifica) {
-    console.log("Hello There!");
+    const promisse = axios.post(
+      "https://mock-api.driven.com.br/api/v4/buzzquizz/quizzes",
+      quiz
+    );
+    promisse.then(vaiProFinal);
+    promisse.catch(function () {
+      alert("cagou no pau");
+    });
+  } else {
+    quiz.levels = [];
+    testaPCT = [];
   }
+}
+function vaiProFinal(resposta) {
+  adicionaFinal(resposta.data);
+  document.querySelector(".criar-quizz__niveis").classList.add("esconder");
+  document.querySelector(".container__proximo").innerHTML = "Acessar Quizz";
+  document.querySelector(".criar-quiz__fim").classList.remove("esconder");
+  document.querySelector(".container__voltar").style.display = "flex";
+  document
+    .querySelector(".container__proximo")
+    .setAttribute("onclick", "abrirQuizz()");
+}
+function adicionaFinal(resposta) {
+  passaQuizz = resposta;
+  document.querySelector(".criar-quiz__fim").innerHTML = `
+  <h2 class="subtitulo-final">Seu quizz está pronto!</h2>
+  <div class="quizz-final" data-id="${resposta.id}">
+  <img src="${resposta.image}" alt="gato"  />
+  <span onclick="abrirQuizz()"
+  >${resposta.title}</span
+  >
+  </div>
+  `;
+  let minhaQuizz = JSON.stringify(resposta) + ",";
+  minhaQuizz += localStorage.getItem("MeusQuizzes");
+  localStorage.setItem("MeusQuizzes", minhaQuizz);
+}
+function abrirQuizz() {
+  let quizzSelecionado = passaQuizz;
+  quizzSelecionado = JSON.stringify(quizzSelecionado);
+
+  localStorage.setItem("quizzSelecionado", quizzSelecionado);
+
+  window.open("./quizz.html", "_self");
 }
