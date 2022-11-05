@@ -1,9 +1,13 @@
 
-.quizz-pergunta{
+.quizz-pergunta, .quizz-pergunta-final{
     background-color: var(--clr-ft-titulo);
     padding: 2.7rem 3.6rem;
     margin-top: 4.2rem;
 
     width: 76rem;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.05);
+}
+
+.quizz-pergunta-final{
+    margin-bottom: 5.7rem;
 }

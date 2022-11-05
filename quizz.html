@@ -11,6 +11,8 @@
     <link rel="stylesheet" href="./styles/cabecalho/cabecalho.css" />
 
     <link rel="stylesheet" href="./styles/container/container.css" />
+    <link rel="stylesheet" href="./styles/container/container-proximo.css"/>
+    <link rel="stylesheet" href="./styles/container/container-voltar.css"/>
 
     <link rel="stylesheet" href="./styles/quizz/quizz-cabecalho.css" />
     <link rel="stylesheet" href="./styles/quizz/quizz-pergunta.css" />
@@ -31,7 +33,26 @@
         <h2 data-cabecalho="titulo"></h2>
       </div>
 
-        
+      <section class="container-perguntas">
+
+      </section>
+
+      <section class="quizz-pergunta-final esconder">
+        <div class="quizz-pergunta__titulo">
+            <h3>88% de acerto: Você é praticamente um aluno de Hogwarts!</h3>
+        </div>
+
+        <div class="quizz-pergunta__respostas-final">
+            <img src="https://i.pinimg.com/236x/ce/09/69/ce09699a297851e6bd84dac5420a4284.jpg" class="quizz-pergunta__img-final"/>
+            <span class="quizz-pergunta__texto-final">Parabéns Potterhead! Bem-vindx a Hogwarts, aproveite o loop infinito de comida e clique no botão abaixo para usar o vira-tempo e reiniciar este teste.</span>
+        </div>
+
+      </section>
+
+      <button class="container__proximo esconder" onclick="">Reiniciar Quizz</button>
+      
+      <a href="./index.html"><button class="container__voltar esconder">Voltar pra home</button></a>
+
     </main>
 
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>

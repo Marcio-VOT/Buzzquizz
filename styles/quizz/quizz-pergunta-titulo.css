@@ -2,7 +2,7 @@
 .quizz-pergunta__titulo{
     text-align: center;
 
-    background-color: brown;
+    background-color: var(--clr-principal);
     padding: 3.5rem 0;
     margin-bottom: 1.8rem;
 

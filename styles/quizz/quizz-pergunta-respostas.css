@@ -1,8 +1,26 @@
 
-.quizz-pergunta__respostas{
+.quizz-pergunta__respostas, .quizz-pergunta__respostas-final{
     display: flex;
     justify-content: space-between;
     align-items: center;
 
     flex-wrap: wrap;
+}
+
+.quizz-pergunta__img-final{
+    height: 27rem;
+    width: calc(50% - 1rem);
+    object-fit: cover;
+}
+
+.quizz-pergunta__texto-final{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    font-size: 1.9rem;
+    font-weight: 700;
+
+    height: 27rem;
+    width: calc(50% - 1rem);
 }

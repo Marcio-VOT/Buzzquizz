@@ -29,7 +29,7 @@ function carregaQuizz() {
 function carregaPerguntas() {
     const perguntas = quizzSelecionado.questions;
 
-    const containerQuizz = document.querySelector(".container-quizz");
+    const containerQuizz = document.querySelector(".container-perguntas");
 
     for (let i = 0; i < perguntas.length; i++) {
 
