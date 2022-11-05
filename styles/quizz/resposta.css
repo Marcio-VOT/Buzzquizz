@@ -5,6 +5,14 @@
     width: calc(50% - 1.2rem);
 }
 
+.certo{
+    color: #009C22;
+}
+
+.errado{
+    color: #FF4B4B;
+}
+
 .resposta img{
     margin-bottom: 1.3rem;
 
@@ -18,4 +26,8 @@
 .resposta span{
     font-size: 2rem;
     font-weight: 700;
+}
+
+.esbranquicar{
+    opacity: .4;
 }

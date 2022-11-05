@@ -52,6 +52,7 @@ function carregaPerguntas() {
         for (let j = 0; j < respostas.length; j++) {
             const respostaAlternativa = document.createElement("div");
             respostaAlternativa.classList.add("resposta");
+            respostaAlternativa.addEventListener("click", verificaResposta);
             const respostaImagem = document.createElement("img");
             respostaImagem.setAttribute("data-resposta","imagem-resposta");
             const respostaTexto = document.createElement("span");
@@ -86,4 +87,23 @@ function embaralharRespostas(respostas){
 
 function comparador() { 
     return Math.random() - 0.5; 
+}
+
+function verificaResposta(elemento){
+    const respostaSelecionada = elemento.currentTarget;
+    const containerRespostas = respostaSelecionada.parentNode;
+    const todasRespostas = containerRespostas.childNodes;
+
+    for (let i = 0; i < todasRespostas.length; i++) {
+
+        todasRespostas[i].getAttribute("data-valor") !== "true"? todasRespostas[i].classList.add("certo") : todasRespostas[i].classList.add("errado");
+        
+        if (todasRespostas[i] !== respostaSelecionada) {
+            todasRespostas[i].classList.add("esbranquicar");
+        }
+
+        todasRespostas[i].style.pointerEvents = "none";
+        
+    }
+    console.log(todasRespostas);
 }
