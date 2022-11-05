@@ -5,6 +5,10 @@ if (localStorage.getItem("MeusQuizzes") == null) {
   localStorage.setItem("MeusQuizzes", "");
 } else {
   seguraQuizzesUsuario = localStorage.getItem("MeusQuizzes");
+  seguraQuizzesUsuario = seguraQuizzesUsuario.substring(
+    0,
+    seguraQuizzesUsuario.length - 1
+  );
   seguraQuizzesUsuario = "[" + seguraQuizzesUsuario + "]";
   seguraQuizzesUsuario = JSON.parse(seguraQuizzesUsuario);
   console.log(seguraQuizzesUsuario);
