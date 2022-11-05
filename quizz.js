@@ -22,4 +22,68 @@ function carregaQuizz() {
 
     cabecalhoImg.setAttribute("src", quizzSelecionado.image);
     cabecalhoTitulo.innerHTML = quizzSelecionado.title;
+
+    carregaPerguntas();
+}
+
+function carregaPerguntas() {
+    const perguntas = quizzSelecionado.questions;
+
+    const containerQuizz = document.querySelector(".container-quizz");
+
+    for (let i = 0; i < perguntas.length; i++) {
+
+        const quizzPergunta = document.createElement("section");
+        quizzPergunta.classList.add("quizz-pergunta");        
+        const containerTitulo = document.createElement("div");
+        containerTitulo.classList.add("quizz-pergunta__titulo");
+        containerTitulo.style.backgroundColor = perguntas[i].color;
+        const tituloPergunta = document.createElement("h3");
+        tituloPergunta.setAttribute("data-pergunta", "titulo-pergunta");
+        tituloPergunta.innerHTML = perguntas[i].title;
+
+
+        const containerRespostas = document.createElement("div");
+        containerRespostas.classList.add("quizz-pergunta__respostas");
+
+        const respostas = embaralharRespostas(perguntas[i].answers);
+        
+        for (let j = 0; j < respostas.length; j++) {
+
+            const respostaAlternativa = document.createElement("div");
+            respostaAlternativa.classList.add("resposta");
+            const respostaImagem = document.createElement("img");
+            respostaImagem.setAttribute("data-resposta","imagem-resposta");
+            const respostaTexto = document.createElement("span");
+
+            respostaAlternativa.setAttribute("data-valor", `${respostas[j].isCorrectAnswer}`);
+            respostaImagem.src = respostas[j].image;
+            respostaTexto.innerHTML = respostas[j].text;
+            
+            respostaAlternativa.appendChild(respostaImagem);
+            respostaAlternativa.appendChild(respostaTexto);
+            containerRespostas.appendChild(respostaAlternativa);
+            console.log(containerRespostas);
+        }
+
+
+        containerTitulo.appendChild(tituloPergunta);
+
+        quizzPergunta.appendChild(containerTitulo);
+        quizzPergunta.appendChild(containerRespostas);
+
+        containerQuizz.appendChild(quizzPergunta);
+    }
+}
+
+function embaralharRespostas(respostas){
+    let tempArray = [];
+    for (let i = 0; i < respostas.length; i++) {
+        let index = Math.floor(Math.random() * respostas.length);
+        tempArray.push(respostas[index]);
+        
+        respostas.splice(index, 1);
+    }
+
+    return tempArray;
 }
