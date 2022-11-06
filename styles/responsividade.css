@@ -1,0 +1,24 @@
+
+@media (max-width: 1050px){
+    
+    .container__criar-quizz{
+        width: 100%;
+    }
+
+    .quizzes{
+        padding: 0 2rem;
+        width: 100%;
+    }
+
+    .quizzes__todos-quizzes, .quizzes__lista{
+        width: 100%;
+    }
+
+    .quizz{
+        height: 25rem;
+        width: 100%;
+        max-width: 100%;
+        min-height: 25rem;
+        min-width: 30rem;
+    }
+}
