@@ -21,4 +21,13 @@
         min-height: 25rem;
         min-width: 30rem;
     }
+
+}
+
+@media (max-width: 600px){
+    .criar-quizz__comeco, .criar-quizz__comeco__info,
+    .criar-quizz__perguntas__info, .criar-quizz__niveis__info{
+        width: 100%;
+        min-width: 35rem;
+    }
 }
