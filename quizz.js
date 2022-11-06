@@ -107,14 +107,11 @@ function verificaResposta(elemento){
     }
 
     proximaPergunta(containerRespostas.parentNode);
-    console.log(todasRespostas);
 }
 
 function proximaPergunta(perguntaAtual){
     const containerPerguntas = document.querySelector(".container-perguntas");
-    console.log(containerPerguntas);
     const perguntas = [...containerPerguntas.children];
-    console.log(perguntas[0]);
 
     for (let i = 0; i < perguntas.length -1; i++) {
         if (perguntas[i] === perguntaAtual) {
@@ -123,4 +120,28 @@ function proximaPergunta(perguntaAtual){
             }, 2000);         
         }
     }
+
+    const numAcertos = document.querySelectorAll(".certo").length;
+
+    if (perguntas.length === numAcertos) {
+        mostrarResultado({titulo: "Ola mundo", imagem: "https://i.pinimg.com/236x/00/02/2a/00022abd5b88e18b67c728501f91de2a.jpg", descricao: "Parabens, voce chegou muito longe descanse aqui na fogueira enquanto cuida de suas feridas"});
+    }
+}
+
+function mostrarResultado({titulo, imagem, descricao}) {
+
+    const containerResultado = document.querySelector(".quizz-pergunta-final");
+    const resultadoTitulo = containerResultado.querySelector("div");
+    const resultadoResposta = document.querySelector(".quizz-pergunta__respostas-final");
+
+    let tituloResultado = resultadoTitulo.querySelector("h3");
+    console.log(tituloResultado);
+    tituloResultado.innerHTML = titulo;
+    
+    let imagemResultado = resultadoResposta.querySelector("img");
+    let textoResultado = resultadoResposta.querySelector("span");
+    imagemResultado.src = imagem;
+    textoResultado.innerHTML = descricao;
+
+    containerResultado.classList.remove("esconder");
 }

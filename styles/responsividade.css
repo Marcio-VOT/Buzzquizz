@@ -25,8 +25,22 @@
 }
 
 @media (max-width: 760px){
-    .quizz-pergunta, .container-perguntas{
+    .quizz-pergunta, .quizz-pergunta-final, .container-perguntas{
         width: 100%;
+    }
+
+    .quizz-pergunta__respostas-final{
+        flex-direction: column;
+    }
+
+    .quizz-pergunta__respostas-final img{
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+
+    .quizz-pergunta__respostas-final span{
+        width: 100%;
+        height: auto;
     }
 }
 
