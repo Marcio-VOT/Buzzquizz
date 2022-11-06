@@ -105,15 +105,22 @@ function verificaResposta(elemento){
         todasRespostas[i].style.pointerEvents = "none";
         
     }
+
+    proximaPergunta(containerRespostas.parentNode);
     console.log(todasRespostas);
 }
 
 function proximaPergunta(perguntaAtual){
     const containerPerguntas = document.querySelector(".container-perguntas");
-    const perguntas = containerPerguntas.childNodes;
+    console.log(containerPerguntas);
+    const perguntas = [...containerPerguntas.children];
+    console.log(perguntas[0]);
 
-    for (let i = 0; i < perguntas.length; i++) {
-        const index = perguntas.Inde
-        
+    for (let i = 0; i < perguntas.length -1; i++) {
+        if (perguntas[i] === perguntaAtual) {
+            setTimeout(() => {
+                perguntas[i + 1].scrollIntoView({block: "start", behavior: "smooth"});
+            }, 2000);         
+        }
     }
 }
