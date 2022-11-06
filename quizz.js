@@ -96,7 +96,7 @@ function verificaResposta(elemento){
 
     for (let i = 0; i < todasRespostas.length; i++) {
 
-        todasRespostas[i].getAttribute("data-valor") !== "true"? todasRespostas[i].classList.add("certo") : todasRespostas[i].classList.add("errado");
+        todasRespostas[i].getAttribute("data-valor") !== "true"? todasRespostas[i].classList.add("errado") : todasRespostas[i].classList.add("certo");
         
         if (todasRespostas[i] !== respostaSelecionada) {
             todasRespostas[i].classList.add("esbranquicar");
@@ -106,4 +106,14 @@ function verificaResposta(elemento){
         
     }
     console.log(todasRespostas);
+}
+
+function proximaPergunta(perguntaAtual){
+    const containerPerguntas = document.querySelector(".container-perguntas");
+    const perguntas = containerPerguntas.childNodes;
+
+    for (let i = 0; i < perguntas.length; i++) {
+        const index = perguntas.Inde
+        
+    }
 }
