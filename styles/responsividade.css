@@ -24,6 +24,12 @@
 
 }
 
+@media (max-width: 760px){
+    .quizz-pergunta, .container-perguntas{
+        width: 100%;
+    }
+}
+
 @media (max-width: 600px){
     .criar-quizz__comeco, .criar-quizz__comeco__info,
     .criar-quizz__perguntas__info, .criar-quizz__niveis__info{
