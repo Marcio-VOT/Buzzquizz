@@ -13,7 +13,6 @@ function selecionaQuizz() {
     }
 
     quizzSelecionado = JSON.parse(quizzSelecionado);
-    console.log(quizzSelecionado);
 }
 
 function carregaQuizz() {
@@ -22,7 +21,7 @@ function carregaQuizz() {
 
     cabecalhoImg.setAttribute("src", quizzSelecionado.image);
     cabecalhoTitulo.innerHTML = quizzSelecionado.title;
-
+    document.querySelector(".container__proximo").addEventListener("click", recarregarQuizz);
     carregaPerguntas();
 }
 
@@ -48,7 +47,6 @@ function carregaPerguntas() {
 
         const respostas = embaralharRespostas(perguntas[i].answers);
         
-        console.log(respostas.length);
         for (let j = 0; j < respostas.length; j++) {
             const respostaAlternativa = document.createElement("div");
             respostaAlternativa.classList.add("resposta");
@@ -116,7 +114,7 @@ function proximaPergunta(perguntaAtual){
     for (let i = 0; i < perguntas.length -1; i++) {
         if (perguntas[i] === perguntaAtual) {
             setTimeout(() => {
-                perguntas[i + 1].scrollIntoView({block: "start", behavior: "smooth"});
+                perguntas[i + 1].scrollIntoView({block: "center", behavior: "smooth"});
             }, 2000);         
         }
     }
@@ -124,7 +122,10 @@ function proximaPergunta(perguntaAtual){
     const numAcertos = document.querySelectorAll(".certo").length;
 
     if (perguntas.length === numAcertos) {
-        mostrarResultado({titulo: "Ola mundo", imagem: "https://i.pinimg.com/236x/00/02/2a/00022abd5b88e18b67c728501f91de2a.jpg", descricao: "Parabens, voce chegou muito longe descanse aqui na fogueira enquanto cuida de suas feridas"});
+        setTimeout(() => {
+            mostrarResultado({titulo: "Ola mundo", imagem: "https://i.pinimg.com/236x/00/02/2a/00022abd5b88e18b67c728501f91de2a.jpg", descricao: "Parabens, voce chegou muito longe descanse aqui na fogueira enquanto cuida de suas feridas"});
+
+        }, 2000);
     }
 }
 
@@ -135,7 +136,6 @@ function mostrarResultado({titulo, imagem, descricao}) {
     const resultadoResposta = document.querySelector(".quizz-pergunta__respostas-final");
 
     let tituloResultado = resultadoTitulo.querySelector("h3");
-    console.log(tituloResultado);
     tituloResultado.innerHTML = titulo;
     
     let imagemResultado = resultadoResposta.querySelector("img");
@@ -144,4 +144,35 @@ function mostrarResultado({titulo, imagem, descricao}) {
     textoResultado.innerHTML = descricao;
 
     containerResultado.classList.remove("esconder");
+
+    //Mostrar Botões
+    document.querySelector(".container__proximo").classList.remove("esconder");
+    document.querySelector(".container__voltar").classList.remove("esconder");
+    
+    //Scrollar para a seção resultado
+    containerResultado.scrollIntoView({block: "start", behavior: "smooth"});
+}
+
+function recarregarQuizz(){
+    //Reset respostas
+    const respostas = [...document.querySelectorAll(".resposta")];
+    
+    respostas.forEach(resp => {
+        resp.classList.remove("esbranquicar");
+        resp.classList.remove("certo");
+        resp.classList.remove("errado");
+
+        resp.style.pointerEvents = "auto";
+    });
+
+    //Scrollar para o topo
+    window.scrollTo(0, 0);
+    
+    //Esconde Resultado
+    const containerResultado = document.querySelector(".quizz-pergunta-final");
+    containerResultado.classList.add("esconder");
+
+    //Esconde Botões
+    document.querySelector(".container__proximo").classList.add("esconder");
+    document.querySelector(".container__voltar").classList.add("esconder");
 }
