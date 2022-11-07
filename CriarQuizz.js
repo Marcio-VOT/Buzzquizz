@@ -332,9 +332,10 @@ function testaNiveis() {
     );
     promisse.then(vaiProFinal);
     promisse.catch(function () {
-      alert("cagou no pau");
+      alert("erro em postar o quizz");
     });
   } else {
+    alert("preencha os dados dos niveis corretamente");
     quiz.levels = [];
     testaPCT = [];
   }
