@@ -11,8 +11,8 @@
     <link rel="stylesheet" href="./styles/cabecalho/cabecalho.css" />
 
     <link rel="stylesheet" href="./styles/container/container.css" />
-    <link rel="stylesheet" href="./styles/container/container-proximo.css"/>
-    <link rel="stylesheet" href="./styles/container/container-voltar.css"/>
+    <link rel="stylesheet" href="./styles/container/container-proximo.css" />
+    <link rel="stylesheet" href="./styles/container/container-voltar.css" />
 
     <link rel="stylesheet" href="./styles/quizz/quizz-cabecalho.css" />
     <link rel="stylesheet" href="./styles/quizz/quizz-pergunta.css" />
@@ -20,8 +20,8 @@
     <link rel="stylesheet" href="./styles/quizz/quizz-pergunta-respostas.css" />
     <link rel="stylesheet" href="./styles/quizz/resposta.css" />
 
-    <link rel="stylesheet" href="./styles/responsividade.css"/>
-    
+    <link rel="stylesheet" href="./styles/responsividade.css" />
+
     <title>BuzzQuizz</title>
   </head>
   <body>
@@ -37,27 +37,18 @@
 
       <section class="container-perguntas"></section>
 
-      <section class="quizz-pergunta-final esconder">
-        <div class="quizz-pergunta__titulo">
-            <h3></h3>
-        </div>
+      <section class="quizz-pergunta-final esconder"></section>
 
-        <div class="quizz-pergunta__respostas-final">
-            <img src="" class="quizz-pergunta__img-final"/>
-            <span class="quizz-pergunta__texto-final"></span>
-        </div>
+      <button class="container__proximo esconder" onclick="">
+        Reiniciar Quizz
+      </button>
 
-      </section>
-
-      <button class="container__proximo esconder" onclick="">Reiniciar Quizz</button>
-      
-      <a href="./index.html"><button class="container__voltar esconder">Voltar pra home</button></a>
-
+      <a href="./index.html"
+        ><button class="container__voltar esconder">Voltar pra home</button></a
+      >
     </main>
 
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="quizz.js"></script>
   </body>
 </html>
-
-

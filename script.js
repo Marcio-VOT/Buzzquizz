@@ -11,7 +11,6 @@ if (localStorage.getItem("MeusQuizzes") == null) {
   );
   seguraQuizzesUsuario = "[" + seguraQuizzesUsuario + "]";
   seguraQuizzesUsuario = JSON.parse(seguraQuizzesUsuario);
-  console.log(seguraQuizzesUsuario);
   for (let i = 0; i < seguraQuizzesUsuario.length; i++) {
     seguraIdUsuario.push(seguraQuizzesUsuario[i].id);
   }
